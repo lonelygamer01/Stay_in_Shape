@@ -2,6 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'Hero_dialog.dart';
+import 'Popup_and_Notification.dart';
+
+int width = 411;
+int height = 683;
 
 class Startingpage extends StatefulWidget {
   const Startingpage({Key? key}) : super(key: key);
@@ -172,7 +176,7 @@ class _DietScreenState extends State<DietScreen> {
                       side: BorderSide(color: Colors.grey, width: 5)),
                   onPressed: () {
                     Navigator.of(context).push(HeroDialogRoute(
-                        builder: (context) => AddTodoPopupCard(),
+                        builder: (context) => WaterInfoPopupCard(),
                         settings: RouteSettings()));
                   },
                   child: Center(
@@ -186,10 +190,32 @@ class _DietScreenState extends State<DietScreen> {
                   ))),
             ),
             SizedBox(height: 50),
-            FlatButton(
-                onPressed: () {},
-                child: Text('testbutton',
-                    style: TextStyle(color: Colors.white, fontSize: 20))),
+            SizedBox(
+              height: 50,
+              width: 250,
+              child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                      primary: Colors.grey,
+                      backgroundColor: Colors.transparent,
+                      side: BorderSide(color: Colors.grey, width: 5)),
+                  onPressed: () {
+                    Navigator.of(context).push(HeroDialogRoute(
+                        builder: (context) => WaterNotificationPopupCard(),
+
+                        ///ezt itt meg kell mókolni!!!!!!
+                        settings: RouteSettings()));
+                  },
+                  child: Center(
+                      child: Row(
+                    children: <Widget>[
+                      Icon(Icons.notifications_none,
+                          color: Colors.grey, size: 30),
+                      SizedBox(width: 10),
+                      Text('Notification',
+                          style: TextStyle(color: Colors.grey, fontSize: 30))
+                    ],
+                  ))),
+            ),
             SizedBox(height: 50),
             FlatButton(
                 onPressed: () {},
@@ -253,43 +279,5 @@ class _HelpScreenState extends State<HelpScreen> {
                     colorFilter: ColorFilter.mode(
                         Colors.black.withOpacity(0.1), BlendMode.dstATop),
                     image: AssetImage('assets/Stay_in_shape_logo2.png')))));
-  }
-}
-
-const String _heroAddTodo = 'add-todo-hero';
-
-class AddTodoPopupCard extends StatelessWidget {
-  /// {@macro add_todo_popup_card}
-  const AddTodoPopupCard({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Hero(
-          tag: _heroAddTodo,
-          child: Material(
-            color: Colors.grey[800],
-            elevation: 2,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
-            child: Container(
-              height: 400,
-              width: 400,
-              child: Center(
-                child: Text(
-                  'Julia is a pretty girl!\n<3 <3 <3',
-                  style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
   }
 }
