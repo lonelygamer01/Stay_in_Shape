@@ -87,6 +87,7 @@ class WaterNotificationPopupCard extends StatefulWidget {
 class _WaterNotificationPopupCardState
     extends State<WaterNotificationPopupCard> {
   bool status = true;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -203,5 +204,21 @@ class _WaterNotificationPopupCardState
         ),
       ),
     ));
+  }
+
+  TimeOfDay selectedTime = TimeOfDay.now();
+  _selectTime(BuildContext context) async {
+    final TimeOfDay? timeOfDay = await showTimePicker(
+        context: context,
+        initialTime: selectedTime,
+        initialEntryMode: TimePickerEntryMode.dial,
+        confirmText: "ok",
+        cancelText: "cancel",
+        helpText: "Select the time");
+    if (timeOfDay != null && timeOfDay != selectedTime) {
+      setState(() {
+        selectedTime = timeOfDay;
+      });
+    }
   }
 }
