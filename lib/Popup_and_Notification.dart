@@ -120,12 +120,14 @@ class _WaterNotificationPopupCardState
                           color: Colors.white,
                         )),
                     SizedBox(width: width * 0.03),
-                    Text('00 : 00',
+                    Text("${selectedTime.hour}:${selectedTime.minute}",
                         style: TextStyle(
                             fontSize: 27, fontWeight: FontWeight.bold)),
                     SizedBox(width: width * 0.15),
                     OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _selectTime(context);
+                      },
                       style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
@@ -152,12 +154,14 @@ class _WaterNotificationPopupCardState
                           color: Colors.white,
                         )),
                     SizedBox(width: width * 0.11),
-                    Text('00 : 00',
+                    Text("${selectedTime.hour}:${selectedTime.minute}",
                         style: TextStyle(
                             fontSize: 27, fontWeight: FontWeight.bold)),
                     SizedBox(width: width * 0.15),
                     OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _selectTime(context);
+                      },
                       style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
