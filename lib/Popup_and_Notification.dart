@@ -141,8 +141,6 @@ class _WaterNotificationPopupCardState
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold))),
                     )
-
-                    ///IDE MÉG KELL CUCC!!!!
                   ]),
                 ),
                 SizedBox(height: height * 0.063),
