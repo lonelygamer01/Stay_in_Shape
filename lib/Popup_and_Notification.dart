@@ -120,13 +120,18 @@ class _WaterNotificationPopupCardState
                           color: Colors.white,
                         )),
                     SizedBox(width: width * 0.03),
-                    Text("${selectedTime.hour}:${selectedTime.minute}",
-                        style: TextStyle(
-                            fontSize: 27, fontWeight: FontWeight.bold)),
-                    SizedBox(width: width * 0.15),
+                    Container(
+                      width: width * 0.2866,
+                      decoration: BoxDecoration(color: Colors.grey[800]),
+                      child: Text(
+                          "${selectedTimefrom.hour}:${selectedTimefrom.minute}",
+                          style: TextStyle(
+                              fontSize: 27, fontWeight: FontWeight.bold)),
+                    ),
+                    SizedBox(width: width * 0.04),
                     OutlinedButton(
                       onPressed: () {
-                        _selectTime(context);
+                        selectTimefrom(context);
                       },
                       style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(
@@ -152,13 +157,18 @@ class _WaterNotificationPopupCardState
                           color: Colors.white,
                         )),
                     SizedBox(width: width * 0.11),
-                    Text("${selectedTime.hour}:${selectedTime.minute}",
-                        style: TextStyle(
-                            fontSize: 27, fontWeight: FontWeight.bold)),
-                    SizedBox(width: width * 0.15),
+                    Container(
+                      width: width * 0.2866,
+                      decoration: BoxDecoration(color: Colors.grey[800]),
+                      child: Text(
+                          "${selectedTimeto.hour}:${selectedTimeto.minute}",
+                          style: TextStyle(
+                              fontSize: 27, fontWeight: FontWeight.bold)),
+                    ),
+                    SizedBox(width: width * 0.04),
                     OutlinedButton(
                       onPressed: () {
-                        _selectTime(context);
+                        selectTimeto(context);
                       },
                       style: OutlinedButton.styleFrom(
                           shape: RoundedRectangleBorder(
@@ -208,18 +218,34 @@ class _WaterNotificationPopupCardState
     ));
   }
 
-  TimeOfDay selectedTime = TimeOfDay.now();
-  _selectTime(BuildContext context) async {
+  TimeOfDay selectedTimefrom = TimeOfDay.now();
+  selectTimefrom(BuildContext context) async {
     final TimeOfDay? timeOfDay = await showTimePicker(
         context: context,
-        initialTime: selectedTime,
+        initialTime: selectedTimefrom,
         initialEntryMode: TimePickerEntryMode.dial,
         confirmText: "ok",
         cancelText: "cancel",
         helpText: "Select the time");
-    if (timeOfDay != null && timeOfDay != selectedTime) {
+    if (timeOfDay != null && timeOfDay != selectedTimefrom) {
       setState(() {
-        selectedTime = timeOfDay;
+        selectedTimefrom = timeOfDay;
+      });
+    }
+  }
+
+  TimeOfDay selectedTimeto = TimeOfDay.now();
+  selectTimeto(BuildContext context) async {
+    final TimeOfDay? timeOfDay = await showTimePicker(
+        context: context,
+        initialTime: selectedTimeto,
+        initialEntryMode: TimePickerEntryMode.dial,
+        confirmText: "ok",
+        cancelText: "cancel",
+        helpText: "Select the time");
+    if (timeOfDay != null && timeOfDay != selectedTimeto) {
+      setState(() {
+        selectedTimeto = timeOfDay;
       });
     }
   }

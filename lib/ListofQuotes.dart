@@ -19,9 +19,9 @@ List listofquotes = [
   '“Just one small positive thought \nin the morning can change \nyour whole day.” \n- Dalai Lama',
   '“Be tolerant with others \nand strict with yourself.” \n- Marcus Aurelius',
   '“If a man knows not which port he sails,\n no wind is favorable.” \n- Seneca',
-  '"Man is not worried by real problems as\n much as by his imagined anxieties \nabout real problems. \n- Epictetus"',
-  '"Luck is what happenes when preparation\n meets the oportunity. \n- Seneca"',
-  '"He who suffers before its nessecary,\n suffers more than its nessecary. \n- Seneca"',
+  '"Man is not worried by real problems as\n much as by his imagined anxieties \nabout real problems." \n- Epictetus',
+  '"Luck is what happenes when preparation\n meets the oportunity." \n- Seneca',
+  '"He who suffers before its nessecary,\n suffers more than its nessecary." \n- Seneca',
   '"Work on the 3 M s: money, muscle, mindset..."\n- The Sigma',
 ];
 
