@@ -239,32 +239,32 @@ class _WaterNotificationPopupCardState
 
   TimeOfDay selectedTimefrom = TimeOfDay.now();
   selectTimefrom(BuildContext context) async {
-    final TimeOfDay? timeOfDay = await showTimePicker(
+    final TimeOfDay? timeOfDayfrom = await showTimePicker(
         context: context,
         initialTime: selectedTimefrom,
         initialEntryMode: TimePickerEntryMode.dial,
         confirmText: "ok",
         cancelText: "cancel",
         helpText: "Select the time");
-    if (timeOfDay != null && timeOfDay != selectedTimefrom) {
+    if (timeOfDayfrom != null && timeOfDayfrom != selectedTimefrom) {
       setState(() {
-        selectedTimefrom = timeOfDay;
+        selectedTimefrom = timeOfDayfrom;
       });
     }
   }
 
   TimeOfDay selectedTimeto = TimeOfDay.now();
   selectTimeto(BuildContext context) async {
-    final TimeOfDay? timeOfDay = await showTimePicker(
+    final TimeOfDay? timeOfDayto = await showTimePicker(
         context: context,
         initialTime: selectedTimeto,
         initialEntryMode: TimePickerEntryMode.dial,
         confirmText: "ok",
         cancelText: "cancel",
         helpText: "Select the time");
-    if (timeOfDay != null && timeOfDay != selectedTimeto) {
+    if (timeOfDayto != null && timeOfDayto != selectedTimeto) {
       setState(() {
-        selectedTimeto = timeOfDay;
+        selectedTimeto = timeOfDayto;
       });
     }
   }
