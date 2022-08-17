@@ -87,6 +87,8 @@ class WaterNotificationPopupCard extends StatefulWidget {
 class _WaterNotificationPopupCardState
     extends State<WaterNotificationPopupCard> {
   bool status = true;
+  String timefrom = '-- : --';
+  String timeto = '-- : --';
 
   @override
   Widget build(BuildContext context) {
@@ -123,10 +125,11 @@ class _WaterNotificationPopupCardState
                     Container(
                       width: width * 0.2866,
                       decoration: BoxDecoration(color: Colors.grey[800]),
-                      child: Text(
-                          "${selectedTimefrom.hour}:${selectedTimefrom.minute}",
-                          style: TextStyle(
-                              fontSize: 27, fontWeight: FontWeight.bold)),
+                      child: Center(
+                          child: Text(
+                              "${selectedTimefrom.hour}:${selectedTimefrom.minute}",
+                              style: TextStyle(
+                                  fontSize: 27, fontWeight: FontWeight.bold))),
                     ),
                     SizedBox(width: width * 0.04),
                     OutlinedButton(
@@ -148,7 +151,7 @@ class _WaterNotificationPopupCardState
                     )
                   ]),
                 ),
-                SizedBox(height: height * 0.063),
+                SizedBox(height: height * 0.033),
                 SizedBox(
                   child: Row(children: <Widget>[
                     Text('To: ',
@@ -160,10 +163,11 @@ class _WaterNotificationPopupCardState
                     Container(
                       width: width * 0.2866,
                       decoration: BoxDecoration(color: Colors.grey[800]),
-                      child: Text(
-                          "${selectedTimeto.hour}:${selectedTimeto.minute}",
-                          style: TextStyle(
-                              fontSize: 27, fontWeight: FontWeight.bold)),
+                      child: Center(
+                          child: Text(
+                              "${selectedTimeto.hour}:${selectedTimeto.minute}",
+                              style: TextStyle(
+                                  fontSize: 27, fontWeight: FontWeight.bold))),
                     ),
                     SizedBox(width: width * 0.04),
                     OutlinedButton(
@@ -187,7 +191,22 @@ class _WaterNotificationPopupCardState
                     ///IDE MÉG KELL CUCC!!!!
                   ]),
                 ),
-                SizedBox(height: height * 0.063),
+                SizedBox(height: height * 0.01),
+                OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        primary: Colors.white,
+                        backgroundColor: Colors.transparent,
+                        side: BorderSide(color: Colors.white, width: 2)),
+                    onPressed: () {},
+                    child: Center(
+                        child: Text('Save',
+                            style: TextStyle(
+                                fontSize: 27,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold)))),
+                SizedBox(height: height * 0.02),
                 SizedBox(
                     child: Row(
                   children: <Widget>[

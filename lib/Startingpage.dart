@@ -201,8 +201,6 @@ class _DietScreenState extends State<DietScreen> {
                   onPressed: () {
                     Navigator.of(context).push(HeroDialogRoute(
                         builder: (context) => WaterNotificationPopupCard(),
-
-                        ///ezt itt meg kell mókolni!!!!!!
                         settings: RouteSettings()));
                   },
                   child: Center(
@@ -219,7 +217,7 @@ class _DietScreenState extends State<DietScreen> {
             SizedBox(height: 50),
             FlatButton(
                 onPressed: () {},
-                child: Text('testbutton',
+                child: Text('Bitch',
                     style: TextStyle(color: Colors.white, fontSize: 20))),
             SizedBox(height: 50),
             FlatButton(
@@ -240,8 +238,6 @@ class _DietScreenState extends State<DietScreen> {
     ));
   }
 }
-
-class _AddTodoPopupCard {}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class WorkoutScreen extends StatelessWidget {
@@ -274,6 +270,8 @@ class _HelpScreenState extends State<HelpScreen> {
     return Scaffold(
         backgroundColor: Colors.black,
         body: Container(
+            child: null,
+            height: 600,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     colorFilter: ColorFilter.mode(
