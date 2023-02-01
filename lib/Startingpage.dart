@@ -66,7 +66,7 @@ class _StartingpageState extends State<Startingpage> {
                   backgroundColor: Colors.grey[800],
                   label: 'Help')
             ],
-            selectedIconTheme: IconThemeData(color: Colors.white, size: 30),
+            selectedIconTheme: IconThemeData(color: Colors.blue[400], size: 30),
             unselectedItemColor: Colors.black,
             showUnselectedLabels: false,
             selectedFontSize: 15,
@@ -215,10 +215,29 @@ class _DietScreenState extends State<DietScreen> {
                   ))),
             ),
             SizedBox(height: 50),
-            FlatButton(
-                onPressed: () {},
-                child: Text('Bitch',
-                    style: TextStyle(color: Colors.white, fontSize: 20))),
+            SizedBox(
+              height: 50,
+              width: 250,
+              child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                      primary: Colors.grey,
+                      backgroundColor: Colors.transparent,
+                      side: BorderSide(color: Colors.grey, width: 5)),
+                  onPressed: () {
+                    Navigator.of(context).push(HeroDialogRoute(
+                        builder: (context) => BMI_calc(),
+                        settings: RouteSettings()));
+                  },
+                  child: Center(
+                      child: Row(
+                    children: <Widget>[
+                      Icon(Icons.scale_outlined, color: Colors.grey, size: 30),
+                      SizedBox(width: 10),
+                      Text('BMI calc.',
+                          style: TextStyle(color: Colors.grey, fontSize: 30))
+                    ],
+                  ))),
+            ),
             SizedBox(height: 50),
             FlatButton(
                 onPressed: () {},
