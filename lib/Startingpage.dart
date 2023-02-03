@@ -37,7 +37,7 @@ class _StartingpageState extends State<Startingpage> {
         backgroundColor: Colors.grey[800],
         toolbarHeight: 50,
         centerTitle: true,
-        title: Text('Stay in Shape',
+        title: Text('Stay In Shape',
             style: TextStyle(fontSize: 25, color: Colors.white)),
       ),
       backgroundColor: Colors.black,
@@ -261,12 +261,90 @@ class _DietScreenState extends State<DietScreen> {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 class WorkoutScreen extends StatelessWidget {
   const WorkoutScreen({Key? key}) : super(key: key);
+  Widget menu_widgets(
+      BuildContext context, String menu_text, IconData icon_type) {
+    return SizedBox(
+      height: 180,
+      width: 180,
+      child: OutlinedButton(
+          style: OutlinedButton.styleFrom(
+              primary: Colors.grey,
+              backgroundColor: Colors.transparent,
+              side: BorderSide(color: Colors.grey, width: 5)),
+          onPressed: () {},
+          child: Center(
+              child: Column(
+            children: <Widget>[
+              Icon(icon_type, color: Colors.grey, size: 30),
+              SizedBox(width: 10),
+              Text(menu_text,
+                  style: TextStyle(color: Colors.grey, fontSize: 30))
+            ],
+          ))),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
         body: Container(
+            padding: EdgeInsets.all(20),
+            child: Container(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                        SizedBox(width: 10),
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                        SizedBox(width: 10),
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                        SizedBox(width: 10),
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                        SizedBox(width: 10),
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                        SizedBox(width: 10),
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                        SizedBox(width: 10),
+                        menu_widgets(context, "Szia", Icons.back_hand_outlined),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
             decoration: BoxDecoration(
                 image: DecorationImage(
                     colorFilter: ColorFilter.mode(
@@ -289,7 +367,34 @@ class _HelpScreenState extends State<HelpScreen> {
     return Scaffold(
         backgroundColor: Colors.black,
         body: Container(
-            child: null,
+            padding: EdgeInsets.all(20),
+            child: Container(
+              padding: EdgeInsets.all(5),
+              width: 368,
+              child: SingleChildScrollView(
+                child: Column(children: <Widget>[
+                  SizedBox(height: 10),
+                  Text("Information about the app",
+                      style: TextStyle(color: Colors.blue[400], fontSize: 27)),
+                  SizedBox(height: 20),
+                  Text(
+                      "Dear User, first of all I want to thank you for downloading my app. I'have put so much effort to it since I would like to learn how to develop an app...\nSo if you have any idea to make this app better or just noticed a bug let me know in the given e-mail address.\nFeedbacks are welcome! Have a great time and don't forget to Stay In Shape!",
+                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                  SizedBox(height: 20),
+                  Text("What can You use it for?                    ",
+                      style: TextStyle(color: Colors.blue[400], fontSize: 23)),
+                  Text(
+                      "Stay In Shape as the name shows, this is a little helper in Your phone which covers the basic features what a fitness app and a health app can do.",
+                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                  Text(
+                      "igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg igen ez egy teszt szöveg ",
+                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                ]),
+              ),
+              /*decoration: BoxDecoration(
+                  color: Colors.grey[800],
+                  borderRadius: BorderRadius.circular(20)),*/
+            ),
             height: 600,
             decoration: BoxDecoration(
                 image: DecorationImage(

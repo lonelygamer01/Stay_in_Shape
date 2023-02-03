@@ -293,23 +293,29 @@ class _BMI_calcState extends State<BMI_calc> {
           (6.755 * current_age);
       if (_activity == Act.little_or_no) {
         cal = (bmr * 1.2).toStringAsFixed(1);
+        prot = (current_weight * 1.1).toStringAsFixed(1);
       }
       if (_activity == Act.one_or_three) {
         cal = (bmr * 1.3).toStringAsFixed(1);
+        prot = (current_weight * 1.3).toStringAsFixed(1);
       }
       if (_activity == Act.four_or_five) {
         cal = (bmr * 1.5).toStringAsFixed(1);
+        prot = (current_weight * 1.4).toStringAsFixed(1);
       }
       if (_activity == Act.daily) {
         cal = (bmr * 1.7).toStringAsFixed(1);
+        prot = (current_weight * 1.5).toStringAsFixed(1);
       }
       if (_activity == Act.extra_or_physical) {
         cal = (bmr * 1.8).toStringAsFixed(1);
+        prot = (current_weight * 1.5).toStringAsFixed(1);
       }
       Alert(
               context: context,
               title: "Your results:",
-              desc: "Ideal bodyweight: $ibw\nDaily calorie intake: $cal")
+              desc:
+                  "Ideal bodyweight: $ibw kg\nDaily calorie intake: $cal kcal\nDaily protein intake: $prot g")
           .show();
     }
     if (_gender == Gender.female) {
@@ -320,23 +326,29 @@ class _BMI_calcState extends State<BMI_calc> {
           (4.676 * current_age);
       if (_activity == Act.little_or_no) {
         cal = (bmr * 1.2).toStringAsFixed(1);
+        prot = (current_weight * 1.1).toStringAsFixed(1);
       }
       if (_activity == Act.one_or_three) {
         cal = (bmr * 1.3).toStringAsFixed(1);
+        prot = (current_weight * 1.3).toStringAsFixed(1);
       }
       if (_activity == Act.four_or_five) {
         cal = (bmr * 1.5).toStringAsFixed(1);
+        prot = (current_weight * 1.4).toStringAsFixed(1);
       }
       if (_activity == Act.daily) {
         cal = (bmr * 1.7).toStringAsFixed(1);
+        prot = (current_weight * 1.5).toStringAsFixed(1);
       }
       if (_activity == Act.extra_or_physical) {
         cal = (bmr * 1.8).toStringAsFixed(1);
+        prot = (current_weight * 1.5).toStringAsFixed(1);
       }
       Alert(
               context: context,
               title: "Your results:",
-              desc: "Ideal bodyweight: $ibw\nDaily calorie intake: $cal")
+              desc:
+                  "Ideal bodyweight: $ibw kg\nDaily calorie intake: $cal kcal\nDaily protein intake: $prot g")
           .show();
     }
   }
@@ -348,7 +360,7 @@ class _BMI_calcState extends State<BMI_calc> {
   late String ibw;
   late double bmr;
   late String cal;
-  late double prot;
+  late String prot;
   Gender? _gender = Gender.male;
   Act? _activity = Act.little_or_no;
   @override
